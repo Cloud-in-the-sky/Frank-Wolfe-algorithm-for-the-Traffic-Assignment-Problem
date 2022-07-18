@@ -240,8 +240,8 @@ def save_data(path, network, delta_list, alpha_list):
 
 if __name__ == '__main__':
     # 程序入口
-    network_1 = read_data('D:\\研究生课程\\网络建模优化\\network1.xlsx')
-    od_1 = read_data('D:\\研究生课程\\网络建模优化\\od_data1.xlsx')
+    network_1 = read_data('network1.xlsx')
+    od_1 = read_data('od_data1.xlsx')
     # 将demand为0的OD对过滤掉
     od_1_new = od_1[od_1["demand"] > 0]
     # 将DataFrame转化为dictionary格式
@@ -251,7 +251,7 @@ if __name__ == '__main__':
     start = time.process_time()
     delta_list_1, alpha_list_1 = FW_algorithm(network_dict_1, od_dict_1)
     end = time.process_time()
-    save_data("D:\\研究生课程\\网络建模优化\\result1-1.xlsx",
+    save_data("result1-1.xlsx",
               network_dict_1, delta_list_1, alpha_list_1)
     # 记录总占用CPU时间
     print("总占用CPU时间为：")
